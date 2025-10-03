@@ -4,6 +4,10 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+const userRoutes = require('./routes/userRoutes');
+app.use('/', userRoutes);

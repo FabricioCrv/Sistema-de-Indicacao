@@ -1,4 +1,4 @@
-const userService = require("../services/userService.js");
+const userService = require("../service/userService.js");
 const auth = require("../auth/auth.js");
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
@@ -47,7 +47,7 @@ async function login(req, res) {
     }
     const payload = { id: user.user_id, email: user.email };
     const token = auth.generateAccessToken(payload);
-    const referralLink = `https://SEU_DOMINIO/register?ref=${user.referralCode}`;
+    const referralLink = `https://Sistema_de_indicacao/register?ref=${user.referralCode}`;
     return res.status(200).json({ token: token, referralLink });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -86,4 +86,34 @@ async function updateScore(req, res) {
   }
 }
 
-module.exports = { register, login, getScore, updateScore };
+async function updateUser(req, res) {
+  try {
+    const user = await User.findByPk(req.params.id);
+    if(!user){
+        return res.status(404).json({ message: "Usuário não encontrado." });
+    }
+    const { name, email, password} = req.body;
+    if (name) user.name = name;
+    if (email) user.email = email;
+    if (password) user.password = await bcrypt.hash(password, 10);
+    await user.save();
+    res.json({ message: "Usuário atualizado com sucesso!" });
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao atualizar usuário." });
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+    const user = await User.findByPk(req.params.id);
+    if(!user){
+        return res.status(404).json({ message: "Usuário não encontrado" });
+    }
+    await user.destroy();
+    res.json({ message: "Usuário apagado com sucesso!" });
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao apagar usuário." });
+  }
+}
+
+module.exports = { register, login, getScore, updateScore, updateUser, deleteUser };
