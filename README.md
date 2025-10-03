@@ -93,3 +93,4 @@ O front-end rodará em `http://localhost:3002` (ou a porta definida no `.env` do
 
 Este projeto foi feito com auxílio da IA Copilot dentro do VScode, usei ela em partes do projeto em que tive pouco contato durante meu percuso nos projetos da faculdade, principalmente no desenvolvimento do Front end, assim como também em certas partes do back end para resolução de erros e configuração do banco de dados. Contudo, outras partes consegui desenvolver com o que eu aprendi durante a construção de outros projetos da faculdade, tanto passados e atuais, também fiz certas linhas de código diferente do que a IA sugeriu, por ser melhor para o desempenho e funcionamento da aplicação.
 
+---
