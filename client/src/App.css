@@ -39,7 +39,7 @@ label {
 }
 
 input[type="name"],
-input[type="email"],
+input[type="text"],
 input[type="password"] {
   padding: 10px 10px;
   margin-top: 5px;
@@ -53,16 +53,7 @@ input[type="password"] {
 }
 
 
-input[type="text"] {
-  padding: 10px 35px;
-  margin-left: 5px;
-  border: 1px solid #c4b5fd;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: #f3e8ff;
-  color: #000000;
-  transition: border 0.2s;
-}
+
 
 input:focus {
   border: 1.5px solid #7c3aed;

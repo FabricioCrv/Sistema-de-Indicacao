@@ -1,17 +1,18 @@
 const jwt = require("jsonwebtoken");
 require('dotenv').config();
-const secretKey = process.env.SECRET_JWT;;
+const secretKey = process.env.SECRET_JWT;
 
-//Gerando um token
+
 function generateAccessToken(username) {
-  return jwt.sign(username, secretKey);
+  const token = jwt.sign(username, secretKey, { expiresIn: '1d' });
+  return token;
 }
 
-//Verificando o token
+
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
-
+  console.log(secretKey)
   if (token == null) {
     return res.sendStatus(401);
   }

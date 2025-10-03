@@ -40,7 +40,7 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     unique: true,
     defaultValue: DataTypes.UUIDV4 
-  }
+  },
 });
 
 User.beforeCreate(async (user, options) => {

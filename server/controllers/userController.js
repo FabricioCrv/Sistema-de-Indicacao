@@ -1,6 +1,9 @@
 const userService = require("../service/userService.js");
 const auth = require("../auth/auth.js");
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const secretKey = process.env.SECRET_JWT;
 const User = require("../models/User");
 
 async function register(req, res) {
@@ -45,9 +48,9 @@ async function login(req, res) {
     if (!ok) {
       return res.status(400).json({ error: "Senha incorreta!" });
     }
-    const payload = { id: user.user_id, email: user.email };
+    const payload = { id: user.id, email: user.email };
     const token = auth.generateAccessToken(payload);
-    const referralLink = `https://Sistema_de_indicacao/register?ref=${user.referralCode}`;
+    const referralLink = `${user.referralCode}`;
     return res.status(200).json({ token: token, referralLink });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -86,6 +89,34 @@ async function updateScore(req, res) {
   }
 }
 
+async function getProfileById(req, res) {
+  try {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if (!token) return res.status(401).json({ error: 'Token não fornecido' });
+
+    const decoded = jwt.verify(token, secretKey);
+
+    const user = await User.findByPk(decoded.id, {
+      attributes: ['id', 'name', 'email', 'score', 'referralCode']
+    });
+    if (!user) {
+      return res.status(404).json({ message: "Usuário não encontrado" });
+    }
+    const referralLink = `${user.referralCode}`;
+    res.json({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      score: user.score,
+      referralLink
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(401).json({ error: 'Token inválido ou expirado' });
+  }
+}
+
 async function updateUser(req, res) {
   try {
     const user = await User.findByPk(req.params.id);
@@ -116,4 +147,5 @@ async function deleteUser(req, res) {
   }
 }
 
-module.exports = { register, login, getScore, updateScore, updateUser, deleteUser };
+
+module.exports = { register, login, getScore,getProfileById, updateScore, updateUser, deleteUser };

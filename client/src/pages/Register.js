@@ -70,7 +70,7 @@ function Register(){
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="email" name="email" value={form.email} onChange={handleChange} required />
+                    <input type="text" name="email" value={form.email} onChange={handleChange} required />
                 </div>
                 <div>
                     <label>Senha:</label>
