@@ -15,7 +15,12 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 - **Responsividade:** Interface responsiva, feita com CSS puro (sem frameworks).
 
 ---
+###Tecnologias Usadas:
+Back end - **NodeJS**: Por questão de familiaridade com a linguagem Javascript após usa-la em vários projetos da faculdade, inclusive um atualmente na cadeira de projeto aplicado em Web
+Front end - **React**: Tive contato com o framework em alguns projetos, e ele é bem intuitívo para muitos projetos web
+Banco de dados - **MySQL**: Simples e fácil usar, tenho bastante familiaridade com banco de dados relacional
 
+---
 ## Como executar o projeto localmente
 
 ### Pré-requisitos
@@ -27,8 +32,8 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 ### 1. Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/FabricioCrv/Sistema-de-Indicacao.git
+cd Sistema-de-indicacao
 ```
 
 ### 2. Configure o banco de dados
@@ -83,3 +88,8 @@ npm start
 O front-end rodará em `http://localhost:3002` (ou a porta definida no `.env` do client).
 
 ---
+
+###Colaboração com IA
+
+Este projeto foi feito com auxílio da IA Copilot dentro do VScode, usei ela em partes do projeto em que tive pouco contato durante meu percuso nos projetos da faculdade, principalmente no desenvolvimento do Front end, assim como também em certas partes do back end para resolução de erros e configuração do banco de dados. Contudo, outras partes consegui desenvolver com o que eu aprendi durante a construção de outros projetos da faculdade, tanto passados e atuais, também fiz certas linhas de código diferente do que a IA sugeriu, por ser melhor para o desempenho e funcionamento da aplicação.
+
