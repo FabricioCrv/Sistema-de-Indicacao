@@ -66,7 +66,7 @@ function Register(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Nome:</label>
-                    <input type="text" name="name" value={form.name} onChange={handleChange} required />
+                    <input type="name" name="name" value={form.name} onChange={handleChange} required />
                 </div>
                 <div>
                     <label>Email:</label>
