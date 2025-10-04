@@ -28,8 +28,9 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 ### Pré-requisitos
 
 - Node.js (v16 ou superior)
-- MySQL
+- MySQL (com o MySQL Workbench)
 - NPM
+
 
 ### 1. Clone o repositório
 
