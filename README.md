@@ -58,7 +58,7 @@ CREATE TABLE Users (
 
 ### 3. Configure as variáveis de ambiente
 
-No diretório `server`, crie um arquivo `.env` com o seguinte conteúdo (ajuste conforme seu ambiente):
+No diretório `server`, crie um arquivo chamado `.env` com o seguinte conteúdo (ajuste conforme seu ambiente):
 
 ```
 PORT=3000
