@@ -45,13 +45,13 @@ cd Sistema-de-indicacao
 
 ```
 CREATE TABLE Users (
-	  id INT auto_increment primary key,
+	id INT auto_increment primary key,
     name varchar(255) not null,
     email varchar(255) not null unique,
     password varchar(255) not null,
     score INT default 0,
     referralCode varchar(255) unique,
-	  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 ```
