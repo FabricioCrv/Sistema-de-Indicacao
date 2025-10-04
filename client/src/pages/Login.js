@@ -65,7 +65,7 @@ function Login(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email:</label>
-                    <input type="email" name="email" value={form.email} onChange={handleChange} />
+                    <input type="text" name="email" value={form.email} onChange={handleChange} />
                 </div>
                 <div>
                     <label>Senha:</label>
