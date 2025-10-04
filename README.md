@@ -6,13 +6,12 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 
 ### Funcionalidades
 
-- **Cadastro de Usuário:** Nome, e-mail, senha e (opcional) código de indicação.
-- **Validação:** E-mail válido e senha com pelo menos 8 caracteres, incluindo letras e números.
+- **Cadastro de Usuário:** Informar nome, e-mail, senha e, se desejar, o código de indicação.
 - **Login:** Autenticação via JWT.
-- **Perfil:** Exibe nome, pontuação e link de indicação único. Botão para copiar o link.
-- **Lógica de Indicação:** Ao cadastrar com um link de indicação, o usuário que indicou ganha 1 ponto.
-- **Atualização e exclusão de usuário:** Possível via API.
-- **Responsividade:** Interface responsiva, feita com CSS puro (sem frameworks).
+- **Perfil:** Exibe nome, pontuação do usuário e link de indicação único dele. Com um botão para copiar o link de indicação.
+- **Lógica de Indicação:** Quando um novo usuário cadastrar no site, o usuário que indicou ganha 1 ponto.
+- **Atualização e exclusão de usuário:** Possível via API (Postman, Bruno, insomnia, etc.).
+- **Responsividade:** Interface responsiva, feita com React.
 
 ---
 ### Tecnologias Usadas
