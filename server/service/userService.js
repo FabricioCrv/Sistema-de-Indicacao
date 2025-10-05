@@ -20,6 +20,10 @@ async function update(id, updatedUser) {
     return await userToUpdate.update(updatedUser);
 }
 
+async function getAll(){
+  return await user.findAll();
+}
+
 async function remove(id) {
   const userToDelete = await user.findByPk(id);
     if (!userToDelete) {
@@ -28,4 +32,4 @@ async function remove(id) {
     return await userToDelete.destroy();
 }
 
-module.exports = { getByEmail ,getById, create, update, remove };
+module.exports = { getByEmail ,getById, getAll , create, update, remove };

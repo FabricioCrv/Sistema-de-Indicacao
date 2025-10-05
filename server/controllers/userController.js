@@ -147,5 +147,14 @@ async function deleteUser(req, res) {
   }
 }
 
+async function getAll(req, res) {
+  try {
+    const users = await userService.getAll();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao buscar usuários." });
+  }
+}
 
-module.exports = { register, login, getScore,getProfileById, updateScore, updateUser, deleteUser };
+
+module.exports = { register, login, getScore,getProfileById, getAll, updateScore, updateUser, deleteUser };
