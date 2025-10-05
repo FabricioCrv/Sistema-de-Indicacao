@@ -122,6 +122,5 @@ Este projeto foi feito com auxílio da **IA Copilot** dentro do VScode, foi usad
 
 ## Aprendizado
 
-Aplicando todos os conhecimentos adiquiridos com projetos passados e usando a IA para as partes menos conhecidas do projeto ajudou a **entender o funcionamento de uma aplicação fullstack**, vendo como cada parte do projeto colabora para garantir a **arquitetura do projeto** 
-e a como a **lógica do negócio** pode ser aplicada dependendo da situação, e como fazer uso efficiente de frameworks para a criação de aplicações tanto front end como back end.
+Aplicar todos os conhecimentos adquiridos em projetos passados e usar a IA para as partes menos conhecidas do projeto ajudou a compreender **o funcionamento de uma aplicação fullstack**, permitindo ver como cada parte do projeto colabora para garantir a **arquitetura do projeto**, como a **lógica de negócio** pode ser aplicada dependendo da situação e como fazer uso eficiente de frameworks e linguagens de programação para a criação de aplicações tanto front-end quanto back-end.
 
