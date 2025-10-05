@@ -6,13 +6,12 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 
 ### Funcionalidades
 
-- **Cadastro de Usuário:** Nome, e-mail, senha e (opcional) código de indicação.
-- **Validação:** E-mail válido e senha com pelo menos 8 caracteres, incluindo letras e números.
+- **Cadastro de Usuário:** Informar nome, e-mail, senha e, se desejar, o código de indicação.
 - **Login:** Autenticação via JWT.
-- **Perfil:** Exibe nome, pontuação e link de indicação único. Botão para copiar o link.
-- **Lógica de Indicação:** Ao cadastrar com um link de indicação, o usuário que indicou ganha 1 ponto.
-- **Atualização e exclusão de usuário:** Possível via API.
-- **Responsividade:** Interface responsiva, feita com CSS puro (sem frameworks).
+- **Perfil:** Exibe nome, pontuação do usuário e link de indicação único dele. Com um botão para copiar o link de indicação.
+- **Lógica de Indicação:** Quando um novo usuário cadastrar no site, o usuário que indicou ganha 1 ponto.
+- **Atualização e exclusão de usuário:** Possível via API (Postman, Bruno, insomnia, etc.).
+- **Responsividade:** Interface responsiva, feita com React.
 
 ---
 ### Tecnologias Usadas
@@ -28,8 +27,9 @@ Este é um sistema de indicação simples, onde usuários podem se cadastrar, fa
 ### Pré-requisitos
 
 - Node.js (v16 ou superior)
-- MySQL
+- MySQL (com o MySQL Workbench)
 - NPM
+
 
 ### 1. Clone o repositório
 
@@ -43,14 +43,32 @@ cd Sistema-de-indicacao
 - Crie um banco de dados MySQL chamado `sistema_indicacao` (ou o nome que preferir).
 - Execute o script `server/database/schema.sql` no MySQL Workbench ou terminal para criar as tabelas.
 
+```
+CREATE TABLE Users (
+	id INT auto_increment primary key,
+    name varchar(255) not null,
+    email varchar(255) not null unique,
+    password varchar(255) not null,
+    score INT default 0,
+    referralCode varchar(255) unique,
+	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
 ### 3. Configure as variáveis de ambiente
 
-No diretório `server`, crie um arquivo `.env` com o seguinte conteúdo (ajuste conforme seu ambiente):
+No diretório `server`, crie um arquivo chamado `.env` com o seguinte conteúdo (ajuste conforme seu ambiente):
 
 ```
 PORT=3000
-DATABASE_URL=mysql://root:1234@localhost:3306/sistema_indicacao
-JWT_SECRET=seu_secret
+DATABASE_URL=mysql://{seu_root}:{sua_senha}@localhost:3306/{seu_schema}
+SECRET_JWT=seu_secret
+```
+Faça o mesmo no diretório `client` para definição da porta, pois o front e o back não podem rodar na mesma porta
+
+```
+PORT=3002
 ```
 
 ### 4. Instale as dependências
