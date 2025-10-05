@@ -2,16 +2,20 @@
 
 ## Sobre o Projeto
 
-Este é um sistema de indicação simples, onde usuários podem se cadastrar, fazer login, visualizar seu perfil, copiar seu link de indicação e indicar novos usuários. Quando um novo usuário se cadastra usando um link de indicação, o usuário que indicou ganha 1 ponto.
+Este é um sistema de indicação simples, onde usuários podem se cadastrar, fazer login, visualizar seu perfil, copiar seu link de indicação e indicar novos usuários. Quando um novo usuário se cadastra usando um link de indicação, o usuário que indicou ganha 1 ponto. Esse projeto faz parte do desáfio técnico da **Vortex Unifor**.
 
-### Funcionalidades
+## Funcionalidades
 
-- **Cadastro de Usuário:** Informar nome, e-mail, senha e, se desejar, o código de indicação.
-- **Login:** Autenticação via JWT.
-- **Perfil:** Exibe nome, pontuação do usuário e link de indicação único dele. Com um botão para copiar o link de indicação.
-- **Lógica de Indicação:** Quando um novo usuário cadastrar no site, o usuário que indicou ganha 1 ponto.
-- **Atualização e exclusão de usuário:** Possível via API (Postman, Bruno, insomnia, etc.).
-- **Responsividade:** Interface responsiva, feita com React.
+### Cadastro de Usuário
+- Usuário informa o nome, e-mail, senha e, se desejar, o código de indicação copiado de outro usuário.
+- Apenas senhas de 8 digitos contendo letras e números são aceitas.
+- Não pode haver mais de um email cadastrado no banco de dados.
+
+### Pagina de Perfil 
+- Exibe nome, pontuação do usuário e link de indicação único dele. Com um botão para copiar o link de indicação.
+
+### Login
+- Usuário informa e-mail e senha, depois é diretamente redirecionado para a pagina de perfil.
 
 ---
 ### Tecnologias Usadas
@@ -110,6 +114,14 @@ O front-end rodará em `http://localhost:3002` (ou a porta definida no `.env` do
 ---
 
 
-### Colaboração com IA
+## Colaboração com IA
 
-Este projeto foi feito com auxílio da IA Copilot dentro do VScode, usei ela em partes do projeto em que tive pouco contato durante meu percuso nos projetos da faculdade, principalmente no desenvolvimento do Front end, assim como também em certas partes do back end para resolução de erros e configuração do banco de dados. Contudo, outras partes consegui desenvolver com o que eu aprendi durante a construção de outros projetos da faculdade, tanto passados e atuais, também fiz certas linhas de código diferente do que a IA sugeriu, por ser melhor para o desempenho e funcionamento da aplicação.
+Este projeto foi feito com auxílio da **IA Copilot** dentro do VScode, foi usada para tirar certas dúvidas do projeto, principalmente para partes envolvendo front end, como também para auxíliar na criação de código repetitivo.
+
+---
+
+## Aprendizado
+
+Aplicando todos os conhecimentos adiquiridos com projetos passados e usando a IA para as partes menos conhecidas do projeto ajudou a **entender o funcionamento de uma aplicação fullstack**, vendo como cada parte do projeto colabora para garantir a **arquitetura do projeto** 
+e a como a **lógica do negócio** pode ser aplicada dependendo da situação, e como fazer uso efficiente de frameworks para a criação de aplicações tanto front end como back end.
+
